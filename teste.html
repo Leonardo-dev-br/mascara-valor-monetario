@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testando valores</title>
+    
+</head>
+<body>
+    <h1>Teste de Valores em R$</h1>
+    <label for="formatar">Digite o número</label>
+    <input type="text" name="" id="numform" onkeyup="formatarValor()">
+    <button onclick="Posicao(numform);">
+        Put Cursor at end of Text
+    </button>
+    
+</body>
+<script>
+
+
+     function Posicao(end) {
+            var len = end.value.length;
+              
+            // Mostly for Web Browsers
+            if (end.setSelectionRange) {
+                end.focus();
+                end.setSelectionRange(len, 2);
+            
+            } else if (end.createTextRange) {
+                var t = end.createTextRange();
+                t.collapse(true);
+                t.moveEnd('character', len);
+                t.moveStart('character', len);
+                t.select();
+            }
+        }
+</script>
+<script src="../scripts/formatarbrl.js">
+</script>
+</html>
