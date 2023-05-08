@@ -5,7 +5,7 @@ function formatarValor(){
 
     //Autocomplemento para valor Inputado ,00
     if(valorInputado === 1){
-        comprimento.value += '00'   
+        valorInputado.value += '00'   
    } 
 }
 
