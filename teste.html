@@ -5,20 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testando valores</title>
-    
+        
 </head>
 <body>
     <h1>Teste de Valores em R$</h1>
     <label for="formatar">Digite o número</label>
     <input type="text" name="" id="numform" onkeyup="formatarValor()">
-    <button onclick="Posicao(numform);">
+    <button onclick="Posicao(numform);"> <!--Botão que move o cursor (Chama a função Posicao())-->
         Put Cursor at end of Text
     </button>
     
 </body>
 <script>
 
-
+    //Função que move o cursor
      function Posicao(end) {
             var len = end.value.length;
               
@@ -36,6 +36,6 @@
             }
         }
 </script>
-<script src="../scripts/formatarbrl.js">
+<script src="funcao.js">
 </script>
 </html>

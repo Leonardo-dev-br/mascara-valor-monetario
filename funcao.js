@@ -1,9 +1,12 @@
 
 function formatarValor(){
-    var valorInputado = document.getElementById("numform").value
-    console.log(valorInputado.indexOf(','))
-    if(valorInputado === 1 || valorInputado === 2){
-        valorInputado.value += ',00'   
-    } 
+    var valorInputado = document.getElementById("numform").value //Pegando valor Inputado pelo User
+    console.log(valorInputado.indexOf(',')) //Mostra a posição da virgula no Valor Inputado pelo User
+
+    //Autocomplemento para valor Inputado ,00
+    if(valorInputado === 1){
+        comprimento.value += '00'   
+   } 
 }
 
+           
