@@ -29,7 +29,7 @@ function formatarValor() {
 
     // Verifica se o valor é numérico e trocando . por ,
     console.log(isEmpty(input.value));
-    if (!isNaN(input.value)) {
+    if (!isNaN(input.value) && !isEmpty(input.value)) {
         var formattedNumber = parseFloat(input.value).toFixed(2);
         input.value = formattedNumber.replace('.', ',');
         input.setSelectionRange(cursorPosition, cursorPosition); //Restaura a posição do cursor para antes da
@@ -37,7 +37,7 @@ function formatarValor() {
         input.value = ''
     }
 
-    }
+}
 </script>
 </body>
 </html>
