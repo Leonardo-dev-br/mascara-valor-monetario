@@ -10,32 +10,34 @@
 <body>
     <h1>Teste de Valores em R$</h1>
     <label for="formatar">Digite o número</label>
-    <input type="text" name="" id="numform" onkeyup="formatarValor()">
-    <button onclick="Posicao(numform);"> <!--Botão que move o cursor (Chama a função Posicao())-->
-        Put Cursor at end of Text
-    </button>
+    <input type="text" name="" id="numform">
     
 </body>
 <script>
 
-    //Função que move o cursor
-     function Posicao(end) {
-            var len = end.value.length;
-              
-            // Mostly for Web Browsers
-            if (end.setSelectionRange) {
-                end.focus();
-                end.setSelectionRange(len, 2);
-            
-            } else if (end.createTextRange) {
-                var t = end.createTextRange();
-                t.collapse(true);
-                t.moveEnd('character', len);
-                t.moveStart('character', len);
-                t.select();
-            }
-        }
+var input = document.getElementById("numform"); // Pegando o elemento input
+
+input.addEventListener('input', formatarValor); // Usando o evento 'input' para capturar alterações no valor
+
+function isEmpty(value) { // re
+    return (!value || value.length === 0);
+    }
+
+function formatarValor() {
+
+    var cursorPosition = input.selectionStart; //armazena Posição do cursor na entrada
+
+    // Verifica se o valor é numérico e trocando . por ,
+    console.log(isEmpty(input.value));
+    if (!isNaN(input.value)) {
+        var formattedNumber = parseFloat(input.value).toFixed(2);
+        input.value = formattedNumber.replace('.', ',');
+        input.setSelectionRange(cursorPosition, cursorPosition); //Restaura a posição do cursor para antes da
+    } else if(isEmpty(input.value)){
+        input.value = ''
+    }
+
+    }
 </script>
-<script src="funcao.js">
-</script>
+</body>
 </html>
