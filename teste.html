@@ -16,14 +16,11 @@
 <script>
 
 var input = document.getElementById("numform"); // Pegando o elemento input, o que o usuário escrever
-input.addEventListener('input', formatarValor); // Usando o evento 'input' para capturar alterações no valor
+input.addEventListener('input', formatarValor); // Usando o evento 'input' para acionar a função formatarValor
 
-function unidades(){
-    return (value.input === )
-}
 
 function isChar(value){ // Função valida Caractere
-    return (value.input === String)
+    return (input.value === String)
 }
 
 function isEmpty(value) { // Valida se o valor está vazio
@@ -33,18 +30,19 @@ function isEmpty(value) { // Valida se o valor está vazio
 function formatarValor() {
 
     var cursorPosition = input.selectionStart; //armazena Posição do cursor na entrada
-
     // Verifica se o valor é numérico
     console.log(isEmpty(input.value));
+
     if (!isNaN(input.value) && !isEmpty(input.value)) {
         var formatandoNum = parseFloat(input.value).toFixed(2); //Convertendo em Float e fixando ponto
         input.value = formatandoNum.replace('.', ','); // Trocando . por ,  
         input.setSelectionRange(cursorPosition, cursorPosition); //Restaura a posição do cursor para antes da virgula
-    } else if(isEmpty(input.value)){
+    
+    }else if(isEmpty(input.value)){
         input.value = ''
-    } else if(isChar){ //Chamada Função que valida se é Caractere
-        input.value = '' //Colocandoo "nada" como valor
     }
+
+    
 }
 
 </script>
