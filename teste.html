@@ -19,7 +19,7 @@ var input = document.getElementById("numform"); // Pegando o elemento input, o q
 
 input.addEventListener('input', formatarValor); // Usando o evento 'input' para capturar alterações no valor
 
-function isEmpty(value) { // re
+function isEmpty(value) { // Valida se o valor está vazio
     return (!value || value.length === 0);
     }
 
@@ -27,12 +27,12 @@ function formatarValor() {
 
     var cursorPosition = input.selectionStart; //armazena Posição do cursor na entrada
 
-    // Verifica se o valor é numérico e trocando . por ,
+    // Verifica se o valor é numérico
     console.log(isEmpty(input.value));
     if (!isNaN(input.value) && !isEmpty(input.value)) {
-        var formattedNumber = parseFloat(input.value).toFixed(2);
-        input.value = formattedNumber.replace('.', ',');
-        input.setSelectionRange(cursorPosition, cursorPosition); //Restaura a posição do cursor para antes da
+        var formattedNumber = parseFloat(input.value).toFixed(2); //Convertendo em Float e fixando ponto
+        input.value = formattedNumber.replace('.', ','); // Trocando . por ,  
+        input.setSelectionRange(cursorPosition, cursorPosition); //Restaura a posição do cursor para antes da virgula
     } else if(isEmpty(input.value)){
         input.value = ''
     }
